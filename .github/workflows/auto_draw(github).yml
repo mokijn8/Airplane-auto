@@ -31,7 +31,8 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python auto_draw_v9.py
+          PYTHONUNBUFFERED: "1"
+        run: python -u auto_draw_v9.py
 
       - name: 保存中奖记录（如果有的话）
         uses: actions/upload-artifact@v4
